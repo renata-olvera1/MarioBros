@@ -13,7 +13,7 @@ public:
     {
         if (numero > 100 || numero < 0)
         {
-            throw new std ::runtime_error("NUMERO FUERA DE RANGO")
+            throw new std ::runtime_error("NUMERO FUERA DE RANGO");
         }
         else
         {
