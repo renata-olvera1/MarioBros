@@ -1,6 +1,7 @@
 #include <iostream>
 #include <Porcentaje.hpp>
 #include <list>
+using namespace std;
 
 int main(){
     std::list<Porcentaje> focos;
@@ -14,7 +15,7 @@ int main(){
     focos.emplace_back(foco2);
     focos.emplace_back(foco3);
 
-    for(auto &&f : foccos)
+    for(auto &&f : focos)
     {
         f.Incrementar(10);
     }
