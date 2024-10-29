@@ -27,6 +27,7 @@ public:
     }
     void Imprimir()
     {
+        system("AF")
         for (auto &&focoActual : focos)
         {
             std::cout
