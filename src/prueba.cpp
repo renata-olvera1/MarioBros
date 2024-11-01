@@ -13,24 +13,16 @@ int main(int argc, char const *argv[])
     std::string reset_position;
     int frame = 0;
     auto can = Canvas(100,100);
-    can.DrawPointLine(3,3,3,3);
-    can.DrawPointEllipse(1,1,2,3);
-    auto ColorSupport = vbox({
-                            Terminal::ColorSupport() >= Terminal::Color::Palette16
-                                ? text(" 16 color palette support : Yes")
-                                : text(" 16 color palette support : No"),
-                            Terminal::ColorSupport() >= Terminal::Color::Palette256
-                                ? text("256 color palette support : Yes")
-                                : text("256 color palette support : No"),
-                            Terminal::ColorSupport() >= Terminal::Color::TrueColor
-                                ? text("       True color support : Yes")
-                                : text("       True color support : No"),
-                        });
+    can.DrawPointLine(15,50,35,50); 
+    can.DrawPointCircle(40,50,4);
+    can.DrawPointCircle(10,50,4);
+    can.DrawPointLine(2,50,4,50); 
+    can.DrawPointLine(2,50,2,42);
+    can.DrawPointLine(2,50,2,42);
     while (true)
     {
         Screen pantalla = Screen::Create(Dimension::Full(), Dimension::Full());
-        Element personaje = spinner(20, frame);
-        Element lienzo = bgcolor(Color::Red, border(vbox(ColorSupport,personaje,canvas(&can))));
+        Element lienzo = bgcolor(Color::Red, border(vbox(canvas(&can))));
         Render(pantalla, lienzo);
         std::cout << reset_position;
         pantalla.Print();
